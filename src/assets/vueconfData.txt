@@ -1,0 +1,160 @@
+Conference:
+  Name: VueConf US
+  Location: New Orleans, LA
+  Date: May 15-17, 2024
+  Host: Evan You and the Vue.js core team
+  Website: <https://vueconf.us/>
+  Registration: <https://vueconf.us/register>
+  Tickets:
+    - Type: Individual: Conference
+      Dates: May 16-17, 2024
+      Price: $895
+    - Type: Conference + Workshop
+      Dates: May 15-17, 2024
+      Price: $1,495
+  Workshops:
+    - Name: Getting Started with Vue
+      Instructor: Adam Jahr
+      Description: Learn the fundamentals of Vue.js and build two apps throughout the day.
+      Topics: The Vue instance, Attribute binding, Conditional rendering, List rendering, Event handling, Class & style binding, Computed properties, Components, Props, Communicating events, Forms, Vue CLI, Single file components, Vue Router Essentials, Dynamic Routing, APIs with Axios, Deploying your Vue app
+    - Name: Nailing it with Nuxt 3 - Inside and Out
+      Instructor: Daniel Roe
+      Description: Learn everything you need to become a Nuxt expert, building on the latest developments in the last year.
+      Topics: Architecting a new app, Working with business constraints, Justifying your choices to a bigger audience, Features of Nuxt, Integrations with Vue, Nitro, TypeScript, Vite, Deployment as part of a full-stack application, Building an app and a Nuxt module, Customizing Nuxt for your needs and use cases
+    - Name: Proven Patterns for Building Vue Apps
+      Instructor: Ben Hong
+      Description: Learn fundamental concepts and principles to build the foundations for world-class Vue applications.
+      Topics: Component design patterns, State management patterns with Pinia and composables, Workflows to enhance productivity, Testing strategies, Best practices for organizing (and reorganizing) increasingly complex applications
+    - Name: Understanding Vue from the Bottom Up
+      Instructor: Evan You
+      Description: Look at Vue from the implementor's perspective and understand how different lower level pieces fit together to form a framework.
+      Topics: Reactivity system, Template compiler, How the compiler transforms the template into code that leverages the reactivity system for efficient rendering
+    - Name: Vitest and The Big Picture: Shipping and Maintaining Quality Applications
+      Instructor: Jess Sachs
+      Description: Learn specific techniques and abstract concepts that will help you test your app, composables, and components.
+      Topics: How to systemically fix "flaky" tests, How to test "things that mount in the browser", How to utilize Testing Library, How to use Mock Service Worker, When to use end-to-end or integration testing tools instead of Vitest, The benefits of realistic mock data using Faker.js, How to test Vue components with your users in mind, How to test components that use slots, scoped slots, events, and props, How to test composables, How and when to mock Vue Router, How to easily test code that relies on state management tools like Pinia
+  Schedule:
+    - Day 1:
+      - Time: 7:30 AM
+        Event: REGISTRATION AND BREAKFAST (GENERATIONS HALL, NOT AT THE CONF HOTEL)
+      - Time: 9:00 AM
+        Event: STATE OF VITE & VUE 2024 (Evan You)
+        Description: State of Vite & Vue 2024
+      - Time: 9:40 AM
+        Event: SHORT COFFEE BREAK!
+        Description: SHORT COFFEE BREAK!
+      - Time: 10:00 AM
+        Event: RENDERING REVEALED (Adam Jahr)
+        Description: Ever feel like you're drowning in the alphabet soup of options for rendering your web apps? SPA, CSR, RSC, SSR, SSG, ISR... 🤯
+        Let’s cut through the confusing jargon and gain clarity about modern rendering modes, how they function, and most importantly: how to select the right rendering strategy for your use case to achieve the most performant outcome possible.
+      - Time: 10:30 AM
+        Event: REUSABLE WIDGETS THAT WORK! (Maria Lamardo)
+         Description: You can easily build reusable components using a JS framework. We can leverage this to build accessible reusable widgets with the help of ARIA (Accessible Rich Internet Application). Using ARIA roles and attributes, we can improve the accessibility of certain elements by providing additional semantics. In this talk, we will go over how to follow the specifications and build accessible and reusable tabs, accordions, toggle buttons, and modal dialogs that work for everyone!
+      - Time: 11:00 AM
+        Event: MORNING BREAK
+        Description: MORNING BREAK
+      - Time: 11:30 AM
+        Event: HOW TO BUILD FAST NUXT 3 APPLICATIONS - PRPL PATTERN IN PRACTICE (Filip Rakowski)
+        Description:Despite growing awareness about the importance of performance and the availability of tools like Lighthouse that allow to measure it with few clicks, we see most of the Single Page Applications being just slow. Most of the SPAs out there don’t pass core web vitals.
+
+        Why? The short answer is JavaScript. Following the standard way of building web applications means that adding every new component or feature equals adding more JavaScript. More JavaScript equals slower page loads.
+
+        Does it mean we are doomed and every feature-rich application just had to be slow? Not at all! During this talk I want to share with you the PRPL patterns that will help you to achieve fast page loads even in large and complex applications. We will explore different stages of application growth, learn about the most common bottlenecks, and how to minimize their impact on the overall page performance. All of that using the latest and greatest iteration of Nuxt.js!
+      - Time: 12:00 AM
+        Event: LUNCH
+        Description: LUNCH
+      - Time: 1:00 PM
+        Event: LIGHTING TALKS!
+        Description: LIGHTING TALKS!
+      - Time: 2:00 PM
+        Event: AI AND THE FUTURE OF TESTING (Jordan Powell)
+        Description: Chat GPT, Bard, Bing, CoPilot; the list goes on. The age of AI is officially here! Artificial intelligence may sound scary but at it's simplest form Artificial Intelligence just combines computer science and very large datasets, to help solve problems. In this talk, I will show you what AI may mean for the future of automated testing and whether or not it's coming for our jobs!
+      - Time: 2:30 PM
+        Event: COMMON MISTAKES IN VUE.JS AND HOW TO AVOID THEM (Daniel Kelly)
+        Description: Building apps with Vue is a delight, but there are some common gotchas you should look out for! In this talk, let’s take a look at some common mistakes that lead to bugs, wasted time, and frustration for Vue.js developers. Topics include: they v-for key attribute, replacing reactive state, failing to clean up event listeners, and more!
+        Many of the mistakes you’ve probably been guilty of yourself (I know I have!). Learn strategies for making the same mistake twice or learn from my own mistakes and the mistakes of others from the community.
+      - Time: 3:00 PM
+        Event: SCALABLE FORMS IN VUE (Justin Schroeder)
+        Description: Discover the art of creating scalable forms in Vue using FormKit — ideal for teams with complex form-heavy projects. This talk delves into strategies for decomposing forms into smaller, composable components, simplifying development, and enhancing team efficiency.
+      - Time: 3:30 PM
+        Event: AFTERNOON BREAK
+        Description: AFTERNOON BREAK
+      - Time: 4:00 PM
+        Event: EMPOWERING VUE APPS WITH AI: A PRACTICAL GUIDE TO OPEN SOURCE AND PRIVATE MODEL INTEGRATION (Aileen Villanueva Lecuona)
+        Description: In the evolving landscape of web development, artificial intelligence (AI) has emerged as a transformative technology to make web development fun and innovative again. This session aims to provide attendees with the knowledge to build their Vue applications with AI capabilities. We will explore the integration of cutting-edge Machine Learning Models, utilizing both open-source libraries like TensorFlow.js and Hugging Face (transformers.js), and close models provided by APIs such as OpenAI and PaLM. Attendees will gain insights into the foundational principles of AI within web environments and learn to implement these technologies through engaging and complex solutions.
+        This talk is for web developers, AI enthusiasts, and tech innovators seeking to harness the power of AI within Vue applications to create intelligent and interactive web experiences.
+      - Time: 4:30 PM
+        Event: VUE.JS GLOBETROTTER: MASTERING INTERNATIONALIZATION FOR USER-CENTRIC WEB APPLICATIONS (J.D. Hillen)
+        Description: Explore the world of "Vue.js and Internationalization (i18n)". In this presentation you will lean practical steps to implementing multilingual features, date formatting, and translations seamlessly with Vue.js, ensuring your web applications are globally accessible and user-friendly. i18n allows your apps to speak the language of your diverse audience effortlessly.
+      - Time: 5:00 PM
+        Event: CONFERENCE RECEPTION (AT VENUE)
+        Description: CONFERENCE RECEPTION (AT VENUE)
+    - Day 2:
+      - Time: 8:00 AM
+        Event: BREAKFAST (GENERATIONS HALL)
+        Description: BREAKFAST (GENERATIONS HALL)
+      - Time: 9:00 AM
+        Event: STATE OF NUXT 2024 (Daniel Roe)
+        Description: STATE OF NUXT 2024
+      - Time: 9:40 AM
+        Event: COFFEE BREAK!
+        Description: COFFEE BREAK!
+      - Time: 10:00 AM
+        Event: MIGRATING FROM VUE 2 CLASS COMPONENTS (Robby Helms)
+        Description: Vue 2 reached End of Life on Dec 31, 2023. The vue-class-component and vue-property-decorator NPM packages, which provided support for Vue 2 class components, are no longer maintained. Even so, these packages are still popular with hundreds of thousands of weekly downloads.
+        In this session, I’ll discuss how we at Pocket Prep migrated multiple Vue 2 apps using class components to Vue 3.
+      - Time: 10:30 AM
+        Event: VUE + TENSORFLOW.JS: BUILDING YOUR FIRST ML POWERED APP (Will Marple)
+        Description: You don't need a background in AI or ML to start using these technologies in your Vue apps! A Vue 3 codebase will be provided that leverages Google's TensorFlow.js and several pre-trained model implementations. We'll talk a little about what TensorFlow.js is, and how you can easily pull in these powerful ML models in your own projects! By the end of the talk, you'll be comfortable using the codebase as a jumping off point to start using TF.js in your own Vue projects!
+      - Time: 11:00 AM
+        Event: MORNING BREAK
+        Description: MORNING BREAK
+      - Time: 11:30 AM
+        Event: PERFORMANCE-MINDED DEVELOPMENT WITH NUXT 3 (Valerie England)
+        Description: Nuxt 3 is a game-changer for creating applications of any size and complexity while maintaining a terrific developer experience along the way. But while focused on rapid feature development, you may find your app's performance leaves much to be desired.In this talk, we'll explore performance-minded development patterns that leverage built-in Nuxt 3 utilities, community-created modules, and an enhanced understanding of Nuxt's SSR lifecycle and hydration processes. From measurement and benchmarks to techniques and practical examples, you'll leave with a robust toolkit in hand to supercharge the speed of your next Nuxt app.
+      - Time: 12:00 AM
+        Event: LUNCH
+        Description:LUNCH
+      - Time: 1:00 PM
+        Event: LIGHTNING TALKS
+        Description:LIGHTNING TALKS
+      - Time: 2:00 PM
+        Event: THE MAGIC OF MOBILE WITH VUE AND VITE (Jess Sachs)
+        Description: The Magic of Mobile with Vue and Vite
+      - Time: 2:30 PM
+        Event: SPECIAL GUEST SPEAKER!
+        Description: SPECIAL GUEST SPEAKER!
+      - Time: 3:00 PM
+        Event: VUE.JS HYDRATION DEMYSTIFIED (Alexander Lichter)
+        Description: Server-side rendering in Vue has lots of benefits. Especially with frameworks like Nuxt.js, developing SSR Vue applications is a breeze, no matter if you use dynamic SSR or static site generation. But on the other hand, server-side rendering also comes with a fair increase of complexity and errors you might have not seen before. While most of them are documented and workarounds are available, one error still boggles lots of minds: When Vue hydration fails.
+        In this talk, we will have a deeper look into Vue's hydration process and explore together why it is needed in the first place, what it actually does and how it can "fail".
+        Next, various scenarios of failing hydration are showcased, together with how to debug these scenarios properly.
+        After this talk, you will have a deep understanding of the hydration process and possible errors will be easy to debug for you.
+      - Time: 3:30 PM
+        Event: AFTERNOON BREAK
+        Description: AFTERNOON BREAK
+      - Time: 4:00 PM
+        Event: FETCHING DATA AND THE PERCEPTION OF SPEED (Rijk van Zanten)
+        Description:Users expect applications to respond instantly, but these expectations are not just about the raw speed of data retrieval, but managing user perception.
+        In this talk, we'll explore how to increase perceived performance and discuss strategic slowdowns, which can sometimes lead to a more engaging user experience, using real-world examples from large open source Vue projects.
+      - Time: 4:30 PM
+        Event: VUE, YOU AND AI SEARCH (Daniel Madalitso Phiri)
+        Chat is the new Search! Or is it? Large language models have brought about a new era in application development. Search being the biggest winner!
+        In this talk, I’ll go through the evolution of building search applications and get into the technology that enables chat-like search in modern applications. We’ll also look at how we can future-proof our applications and build them to scale without sacrificing the user experience.
+        Besides the history lesson, at the end of this talk, you too will have an idea of how to go about building AI-enabled search experiences!
+      - Time: 5:00 PM
+        Event: CONFERENCE CLOSE AND PRIZES!
+        Description: CONFERENCE CLOSE AND PRIZES!
+      - Time: 5:30 PM
+        Event: CONFERENCE AFTER-PARTY (AT VENUE)
+        Description: CONFERENCE AFTER-PARTY (AT VENUE)
+  Location:
+    - Name: Generations Hall
+      Address: 310 Andrew Higgins Blvd, New Orleans, LA
+    - Name: Renaissance New Orleans Arts Hotel
+      Address: 700 Tchoupitoulas St, New Orleans, LA
+      Booking Link: <https://book.passkey.com/go/VueConfUS2024>
+  Sponsors:
+    - Level: Partner
+      Name: Company A
+      Logo: <https://example.com/company
