@@ -34,7 +34,10 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_API_KEY;
 export default {
   setup() {
     const client = new GoogleGenerativeAI(geminiApiKey);
-    const clientEmbedding = new OpenAI({apiKey:openAIKey,dangerouslyAllowBrowser: true });
+
+    const clientEmbedding = new OpenAI({apiKey:openAIKey,
+      dangerouslyAllowBrowser: true });
+
     const supabase = createClient(supabaseUrl, supabaseKey);
     const chatResponse = ref(null);
     const vueInfoChunks = ref(null);
@@ -68,6 +71,7 @@ export default {
     }
   }
   //Step 3: Creating embeddings for each chunk with openAI
+  
   async function createEmbeddings(chunks) {
     try {
       const embeddings = await clientEmbedding.embeddings.create({
@@ -88,30 +92,10 @@ export default {
     }
   }
 
-  //Step 3: Creating embeddings for each chunk with Google
-/*   async function createEmbeddings(chunks) {
-    try {
-      const embeddings = await googleModelEmbedding.embedContent(chunks);
-      console.log(embeddings, 'embedding')
-      const data = chunks.map((chunk, i) => {
-        return {
-          content: chunk,
-          embedding: embeddings.data[i].embedding
-        }
-      });
-      console.log(data);
-      return data;
-      
-    } catch (error) {
-      console.error(error);
-    }
-  } */
-
   const handleSubmit = async () => {
     loading.value = true;
     const embedding = await createEmbedding(query.value);
     const context = await retrieveMatches(embedding);
-    console.log('Context:', context)
     response.value = await generateChatResponse(context, query.value);
     loading.value = false;
   };
@@ -125,13 +109,14 @@ async function createEmbedding(input) {
   return embeddingResponse.data[0].embedding;
 }
 
-// 3. Retrieving similar embeddings / text chunks (aka "context")
+// 3. Retrieving similar embeddings / text chunks
 async function retrieveMatches(embedding) {
   const { data } = await supabase.rpc('match_vueconf_docs', {
     query_embedding: embedding,
     match_threshold: 0.50,
     match_count: 8 
   });
+  console.log(data, 'data')
   if (data) {
     return  data.map(chunk => chunk.content).join(" ");;
   } else {
@@ -147,15 +132,11 @@ async function generateChatResponse(context, query) {
       const chatHistory = [
         {
           role: "user",
-          parts: [{ text: `Here is some context: ${context}` }],
+          parts: [{ text: `User has a question` }],
         },
         {
           role: "model",
-          parts: [{ text: "I understand. What would you like to know?" }],
-        },
-        {
-          role: "user",
-          parts: [{ text: query }],
+          parts: [{ text: `Here is some context: ${context}` }],
         },
       ];
 
@@ -167,27 +148,10 @@ async function generateChatResponse(context, query) {
       });
       
       const result = await chat.sendMessage(query);
-        console.log('Chat Result:', result);
         const response = await result.response;
-        console.log('Chat Response:', response);
         const text = await response.text();
-        console.log('Response Text:', text);
         return text;
     }
-
-  // const model = client.getGenerativeModel({ model: "gemini-pro"})
-  // const result = await model.generateContent(`Handbook context: ${context} - Question: ${query}`);
-  // const response = await result.response;
-  // const text = response.text();
-
-
-   
-    // const handleSubmit = async () => {
-    //   loading.value = true;
-    //   response.value = await agent(query.value);
-    //   loading.value = false;
-    // };
-  
       onMounted(async () => {
         await loadTextFile();
         await splitDocument(vueconf.value);
