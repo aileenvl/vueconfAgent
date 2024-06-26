@@ -70,7 +70,7 @@ export default {
       console.error(error);
     }
   }
-  //Step 3: Creating embeddings for each chunk with openAI
+  //Step 3: Creating embeddings for each chunk with openAI text-embedding-ada-002 model
   
   async function createEmbeddings(chunks) {
     try {
@@ -100,7 +100,7 @@ export default {
     loading.value = false;
   };
 
-// 2. Creating an embedding of the input
+// 2. Creating an embedding of the input with same model
 async function createEmbedding(input) {
   const embeddingResponse = await clientEmbedding.embeddings.create({
         model: "text-embedding-ada-002",
@@ -155,7 +155,7 @@ async function generateChatResponse(context, query) {
       onMounted(async () => {
         await loadTextFile();
         await splitDocument(vueconf.value);
-        const data = await createEmbeddings(vueInfoChunks.value);
+        //const data = await createEmbeddings(vueInfoChunks.value);
         //await supabase.from('vueconf_docs').insert(data);
       });
     return {
