@@ -1,4 +1,3 @@
-Sure, here's the updated README:
 
 # AI Agent for VueConfUS Conference Q&A with Vue, Vite, Gemini Model, OpenAI Models, Supabase, and LangChain.js
 
