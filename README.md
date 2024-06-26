@@ -7,13 +7,74 @@ This project is a basic AI agent for handling conference Q&A built using Vue, Vi
 
 - Node.js (v14.0.0 or later)
 - Vite CLI
-- Supabase account
-- OpenAI API key (for text embedding)
+- Supabase account https://supabase.com/ you can have free DB (Free plan. Supabase provides two "Free organizations". Each organization can run a Nano instance for free. This is a great way to get started with Supabase and try out the platform.)
+- LangChain.js https://js.langchain.com/v0.2/docs/introduction/
+- OpenAI API key (for text embedding) https://openai.com/
 - API key for any language model of your choice (e.g., Gemini, Mistral, Claude3) for generating responses
+  https://gemini.google.com/
+  https://mistral.ai/
+  https://www.anthropic.com/claude
 
 In this project, we use OpenAI for text embedding, which is the process of converting text into numerical vectors that can be stored in a vector database like Supabase. However, you can use any other language model API of your choice for generating responses to the user's queries.
 
 ## Getting Started
+
+## Supabase
+Sure, here are the steps to create a vector database in Supabase manually:
+
+1. Create a new Supabase project by signing up or logging in to your Supabase account.
+2. In the project dashboard, click on the "Database" tab.
+3. Click on the "SQL Editor" tab.
+4. Create a new table with a vector column by running the following SQL command:
+```sql
+CREATE TABLE documents (
+  id SERIAL PRIMARY KEY,
+  content TEXT,
+  embedding vector(1024)
+);
+```
+5. Insert data into the vector column by running the following SQL command:
+```sql
+INSERT INTO documents (content, embedding)
+VALUES (
+  'Your document content here',
+  vector(1.234, -0.567, ..., 0.987)
+);
+```
+Note: The vector values should be enclosed in parentheses and separated by commas.
+
+6. To query the vector column and find the most similar documents to a given query embedding, you can use the `<=>` operator in a SQL query. Here is an example using the `match_vueconf_docs` function I provided earlier:
+```sql
+CREATE OR REPLACE FUNCTION match_vueconf_docs (
+  query_embedding vector(1024),
+  match_threshold float,
+  match_count int
+)
+RETURNS TABLE (
+  id bigint,
+  content text,
+  similarity float
+)
+AS $$
+  SELECT
+    id,
+    content,
+    1 - (embedding <=> $1) AS similarity
+  FROM documents
+  WHERE 1 - (embedding <=> $1) > $2
+  ORDER BY (embedding <=> $1) ASC
+  LIMIT $3;
+$$ LANGUAGE SQL STABLE;
+
+SELECT * FROM match_vueconf_docs(
+  vector(1.234, -0.567, ..., 0.987),
+  0.7,
+  10
+);
+```
+This query will return the 10 documents in the "documents" table that are most similar to the given query embedding, with a similarity score greater than 0.7.
+
+## Project
 
 1. Clone the repository: `git clone https://github.com/yourusername/ai-agent.git`
 2. Install dependencies: `npm install`
