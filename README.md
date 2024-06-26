@@ -75,7 +75,7 @@ This query will return the 10 documents in the "documents" table that are most s
 
 ## Project
 
-1. Clone the repository: `git clone https://github.com/yourusername/ai-agent.git`
+1. Clone the repository
 2. Install dependencies: `npm install`
 3. Set up environment variables:
    - Create a `.env` file in the root directory and add your Supabase and OpenAI API keys.
