@@ -20,7 +20,6 @@ In this project, we use OpenAI for text embedding, which is the process of conve
 ## Getting Started
 
 ## Supabase
-Sure, here are the steps to create a vector database in Supabase manually:
 
 1. Create a new Supabase project by signing up or logging in to your Supabase account.
 2. In the project dashboard, click on the "Database" tab.
